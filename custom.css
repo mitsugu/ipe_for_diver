@@ -1,0 +1,40 @@
+body {
+    /* 画像ファイルのパスを指定 */
+    background-image: url('./fig02.jpg');
+
+    /* 画面全体を覆うように設定 (任意) */
+    background-size: cover;
+
+    /* 画像を中央に配置 (任意) */
+    background-position: center center;
+
+    /* 画像の繰り返しをしない (任意) */
+    background-repeat: no-repeat;
+}
+section {
+  position: relative; /* `cover` を `p` に重ねるため */
+  display: inline-block;
+}
+table {
+	font-size:0.6em;
+}
+.cover {
+  position: absolute;
+  top: -2px; left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  background: brown;
+  transition: transform 1s ease-in-out, opacity 0.5s ease-in-out 1s, visibility 0s linear 1.5s;
+  transform-origin: top right;
+  transform: rotateY(0deg);
+  cursor: pointer;
+}
+
+.cover.flipped {
+  transform: rotateY(180deg);
+  opacity: 0; /* フェードアウト */
+  visibility: hidden; /* 完全に非表示 */
+}
+strong {
+	color:crimson;
+}

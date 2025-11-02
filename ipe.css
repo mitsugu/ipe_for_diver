@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'AbuyamaSlideFont';
+  src: url('fonts/rounded-mplus-1p-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AbuyamaSlideFontBold';
+  src: url('fonts/rounded-mplus-1p-bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AbuyamaSlideFontBlack';
+  src: url('fonts/rounded-mplus-1p-black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+h1[page01], section p {
+	font-family:AbuyamaSlideFontBlack;
+	font-weight:black;
+	color: white; /* 文字色 */
+	-webkit-text-stroke: 2px black; /* Chrome, Safari用 */
+	text-stroke: 2px black; /* Firefox, Edge用 */
+}
+
+section.present h1 {
+	font-family:AbuyamaSlideFont;
+	font-weight:black;
+	color: white; /* 文字色 */
+	-webkit-text-stroke: 2px black; /* Chrome, Safari用 */
+	text-stroke: 2px black; /* Firefox, Edge用 */
+}
+

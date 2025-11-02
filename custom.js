@@ -1,0 +1,38 @@
+document.addEventListener("DOMContentLoaded", function() {
+  Reveal.initialize({
+    controls: true, // 画面のナビゲーションボタンを表示
+    keyboard: true, // キーボードでスライド操作を有効化
+    touch: true, // タッチ操作を有効化
+    history: true, // ブラウザの履歴を有効にして戻る・進むができるように
+    center: true, // スライドを常にセンターに配置
+  });
+  // すべての .cover 要素に対してクリックイベントとキーボードイベントを設定
+  const covers = document.querySelectorAll('.cover');
+  covers.forEach(function(cover) {
+    // クリックイベント
+    cover.addEventListener('click', function() {
+      this.classList.add('flipped');
+    });
+
+    // キーボードイベント
+    cover.addEventListener('keydown', function(event) {
+      // エンターキーで紙をめくる
+      if (event.key === 'Enter') {
+        this.classList.add('flipped');
+      }
+    });
+
+    // .cover にフォーカスを設定する（キーボードイベントが有効になるために必要）
+    cover.tabIndex = 0; // キーボードフォーカスを可能にする
+  });
+
+  // BGM の再生制御
+  const bgm = document.getElementById('bgm');
+  Reveal.on('ready', () => {
+    bgm.play();
+  });
+  Reveal.on('slidechanged', () => {
+    //bgm.currentTime = 0;
+    bgm.play();
+  });
+});
